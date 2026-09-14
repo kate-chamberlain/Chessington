@@ -22,7 +22,7 @@ namespace Chessington.GameEngine.Pieces
                     }
                 }
                 
-                for (var i = 0; i < GameSettings.BoardSize; i++)
+                for (var i = 0;i < GameSettings.BoardSize; i++)
                 {
                     if (i != CurrentSquare.Col)
                     {
