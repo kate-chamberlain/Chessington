@@ -18,13 +18,14 @@ namespace Chessington.GameEngine.Tests.Pieces
             var moves = rook.GetAvailableMoves(board);
             var expectedMoves = new List<Square>();
 
+           // Adds all of the squares in the same row and col as rook as potential moves
             for (var i = 0; i < 8; i++)
                 expectedMoves.Add(Square.At(4, i));
 
             for (var i = 0; i < 8; i++)
                 expectedMoves.Add(Square.At(i, 4));
 
-            //Get rid of our starting location.
+            //Get rid of our starting location (as it's not a valid move but added it twoice in the above loops)
             expectedMoves.RemoveAll(s => s == Square.At(4, 4));
 
             moves.Should().Contain(expectedMoves);
